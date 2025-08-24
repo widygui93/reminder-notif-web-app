@@ -1,0 +1,123 @@
+@import './sass/styles.scss';
+
+.header {
+/*  background-color: #1C8693;*/
+  background-color: #5ACFA3;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-menu {
+/*  border: 1px solid blue;*/
+  padding: 0;
+  display: none;
+}
+
+.home-menu, .notif-menu {
+/*    display: inline;*/
+  margin-left: 2px;
+}
+
+.main-content {
+/*  border: 1px solid red;*/
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+.accordion-notif {
+  display: none;
+}
+
+.listgroup-item {
+  padding: 10px;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  text-decoration: none;
+  color: var(--bs-list-group-secondary-color);
+  background-color: var(--bs-secondary-bg);
+}
+
+.dropdown-menu {
+/*  margin-top: -10px;
+  margin-left: 10px;
+  padding: 0px;*/
+  border-radius: 0px;
+}
+
+.pagination {
+  --bs-pagination-color: var(--bs-list-group-secondary-color);
+  --bs-pagination-hover-color: #5ACFA3;
+  --bs-pagination-focus-color: #5ACFA3;
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem #5ACFA3;
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: #5ACFA3;
+  --bs-pagination-active-border-color: #5ACFA3;
+}
+
+/*@media screen and (min-width: 576px) {*/
+@media screen and (min-width: 992px) {  
+
+  .menu-side-btn {
+    display: none;
+  }
+
+  .offcanvas-menu {
+    display: none;
+  }
+
+/*  .dropdown-notif {
+    display: none;
+  }*/
+
+  .accordion-notif, .side-menu {
+    display: block;
+  }
+
+  .accordion-button {
+    text-align: center;
+    background-color: transparent;
+
+    &:not(.collapsed) {
+      color: black;
+      background-color: transparent;
+      box-shadow: none;
+      
+      &::after {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+    // Accordion icon
+    &::after {
+      flex-shrink: 0;
+      margin-left: auto;
+      content: "";
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &:hover {
+      z-index: 2;
+    }
+
+    &:focus {
+      z-index: 3;
+      outline: 0;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .listgroup-item:nth-child(2) {
+    padding: 0px;
+  }
+
+  .link-home:nth-child(1) {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 7px;
+  }
+}
